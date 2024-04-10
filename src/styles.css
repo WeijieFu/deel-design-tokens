@@ -1,0 +1,39 @@
+.item{
+    padding: 0.25rem 0.5rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0.5rem;
+}
+
+.item-right{
+    opacity: 0;
+    pointer-events: none;
+    color: var(--figma-color-text-tertiary);
+}
+.item:hover{
+    background-color: var(--figma-color-bg-hover);
+}
+
+.item:hover .item-right{
+    opacity: 1;
+}
+
+.item-key{
+    font-weight: 600;
+    font-size: 0.75rem;
+    pointer-events: none;
+}
+
+.item-value{
+    color: var(--figma-color-text-secondary);
+    cursor:text;
+
+}
+
+.search-box{
+    position: sticky;
+    top: 0;
+    background-color: var(--figma-color-bg);
+}
