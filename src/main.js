@@ -1,4 +1,4 @@
-import { once, on, showUI } from "@create-figma-plugin/utilities"
+import { once, on, showUI, compareObjects } from "@create-figma-plugin/utilities"
 import { flatten } from "flat"
 import data from `./data/rebrand.json`
 export default async function () {
@@ -14,8 +14,11 @@ const transform = (data)=>{
   const obj = flatten(data)
   const components = {}
 
+  console.log(obj)
+
   for (const key in obj){
-    if (key.startsWith('Components') && key.endsWith('$value') && obj[key.replace('$value','$type')]== "color"){
+    if (key.startsWith('component') && key.endsWith('$value') && obj[key.replace('$value','$type')]== "color"){
+      console.log(key)
       const arr = key.split(".")
       arr.shift()
       arr.pop()
